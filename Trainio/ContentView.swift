@@ -22,7 +22,31 @@ struct ContentView: View {
                     NavigationLink {
                         EntrenamientoView(entrenamiento: entrenamiento)
                     } label: {
-                        Text(entrenamiento.inicio, format: Date.FormatStyle(date: .numeric, time: .standard))
+                        VStack(alignment: .leading, spacing: 4) {
+                            HStack {
+                                Text(entrenamiento.inicio, format: Date.FormatStyle(date: .numeric, time: .standard))
+                                    .font(.headline)
+                                Spacer()
+                                if entrenamiento.fin != nil {
+                                    Label("Finalizado", systemImage: "checkmark.seal.fill")
+                                        .foregroundStyle(.green)
+                                        .font(.caption)
+                                } else {
+                                    Label("En progreso", systemImage: "hourglass")
+                                        .foregroundStyle(.orange)
+                                        .font(.caption)
+                                }
+                            }
+                            if entrenamiento.gruposMusculares.isEmpty {
+                                Text("Grupos: No especificado")
+                                    .font(.subheadline)
+                                    .foregroundStyle(.secondary)
+                            } else {
+                                Text("Grupos: " + entrenamiento.gruposMusculares.map { $0.rawValue }.joined(separator: ", "))
+                                    .font(.subheadline)
+                                    .foregroundStyle(.secondary)
+                            }
+                        }
                     }
                 }
                 .onDelete(perform: deleteItems)
@@ -121,3 +145,4 @@ struct ContentView: View {
     ContentView()
         .modelContainer(for: Entrenamiento.self, inMemory: true)
 }
+
