@@ -7,72 +7,44 @@
 
 import SwiftUI
 import SwiftData
+import Foundation
 
 struct ContentView: View {
-//    @Environment(\.modelContext) private var modelContext
-//    @Query private var entrenamientos: [Entrenamiento]
-//    
-//    @State private var showAddSheet = false
-//    @State private var selectedGrupoMuscular: GrupoMuscular = GrupoMuscular.allCases.first!
-//    
-//    private func deleteItems(at offsets: IndexSet) {
-//        for index in offsets {
-//            let item = entrenamientos[index]
-//            modelContext.delete(item)
-//        }
-//    }
-//    
-//    private func addItem(grupoMuscular: GrupoMuscular) {
-//        let nuevo = Entrenamiento(inicio: Date(), grupoMuscular: grupoMuscular)
-//        modelContext.insert(nuevo)
-//    }
+    @Environment(\.modelContext) private var modelContext
+    
+    @State private var mostrarSeleccionGrupos = false
+    @State private var gruposSeleccionados = Set<GrupoMuscular>()
+    @State private var mostrarListadoEntrenamientos = false
+    @State private var entrenamientoReciente: Entrenamiento? = nil
     
     var body: some View {
-//        NavigationStack {
-//            Button(action: { showAddSheet = true }) {
-//                Label("Nuevo Entrenamiento", systemImage: "plus")
-//                    .font(.title2)
-//                    .padding(8)
-//                    .frame(maxWidth: .infinity)
-//            }
-//            .buttonStyle(.borderedProminent)
-//            .padding(.bottom, 6)
-//            List {
-//                ForEach(entrenamientos) { entrenamiento in
-//                    NavigationLink(destination: EntrenamientoView(entrenamiento: entrenamiento)) {
-//                        Text(entrenamiento.inicio, format: Date.FormatStyle(date: .numeric, time: .standard))
-//                    }
-//                }
-//                .onDelete(perform: deleteItems)
-//            }
-//        }
-//        .sheet(isPresented: $showAddSheet) {
-//            VStack {
-//                Text("Selecciona el grupo muscular")
-//                    .font(.headline)
-//                ForEach(GrupoMuscular.allCases, id: \.self) { grupo in
-//                    Button(action: {
-//                        addItem(grupoMuscular: grupo)
-//                        showAddSheet = false
-//                    }) {
-//                        Text(grupo.rawValue)
-//                            .frame(maxWidth: .infinity)
-//                            .padding()
-//                            .background(Color.accentColor.opacity(0.2))
-//                            .cornerRadius(8)
-//                    }
-//                    .buttonStyle(.borderedProminent)
-//                    .padding(.vertical, 2)
-//                }
-//                Button("Cancelar") {
-//                    showAddSheet = false
-//                }
-//                .padding(.top, 8)
-//            }
-//            .padding()
-//            .presentationDetents([.medium])
-//        }
-        Text("Hola")
+        VStack {
+            Button("Añadir entrenamiento") {
+                mostrarSeleccionGrupos = true
+            }
+            Button("Ver entrenamientos") {
+                mostrarListadoEntrenamientos = true
+            }
+        }
+        .sheet(isPresented: $mostrarSeleccionGrupos) {
+            SeleccionarGruposView(seleccionados: $gruposSeleccionados) {
+                mostrarSeleccionGrupos = false
+                let nuevo = addItem(gruposMusculares: Array(gruposSeleccionados))
+                entrenamientoReciente = nuevo
+            }
+        }
+        .sheet(isPresented: $mostrarListadoEntrenamientos) {
+            EntrenamientosList() // Placeholder, asumiendo que esta vista existe
+        }
+        .sheet(item: $entrenamientoReciente) { entrenamiento in
+            EntrenamientoView(entrenamiento: entrenamiento)
+        }
+    }
+    
+    private func addItem(gruposMusculares: [GrupoMuscular]) -> Entrenamiento {
+        let newItem = Entrenamiento(inicio: Date(), gruposMusculares: gruposMusculares)
+        modelContext.insert(newItem)
+        return newItem
     }
 }
 

@@ -18,42 +18,44 @@ struct EntrenamientoView: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            VStack(alignment: .leading, spacing: 6) {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 8) {
                 Text("Grupos musculares:")
-                    .font(.headline)
+                    .font(.title3)
+                    .bold()
+                
                 if entrenamiento.gruposMusculares.isEmpty {
                     Text("No especificado")
-                        .foregroundStyle(.secondary)
+                        .font(.body)
+                        .padding(.bottom, 4)
                 } else {
-                    let columns = [GridItem(.adaptive(minimum: 80, maximum: 120), spacing: 10)]
-                    LazyVGrid(columns: columns, alignment: .leading, spacing: 8) {
-                        ForEach(entrenamiento.gruposMusculares, id: \.self) { grupo in
-                            Text(grupo.rawValue)
-                                .font(.subheadline)
-                                .foregroundStyle(.white)
-                                .padding(.vertical, 8)
-                                .padding(.horizontal, 16)
-                                .background(
-                                    RoundedRectangle(cornerRadius: 18, style: .continuous)
-                                        .fill(Color.accentColor)
-                                        .shadow(color: Color.accentColor.opacity(0.18), radius: 2, x: 0, y: 1)
-                                )
-                        }
+                    ForEach(entrenamiento.gruposMusculares, id: \.self) { grupo in
+                        Text(grupo.rawValue)
+                            .font(.body)
+                            .padding(.vertical, 6)
+                            .padding(.horizontal, 10)
                     }
                 }
-            }
-            Text("Entrenamiento iniciado el \(entrenamiento.inicio, format: Date.FormatStyle(date: .numeric, time: .standard))")
-            if let fin = entrenamiento.fin {
-                Text("Finalizado el \(fin, format: Date.FormatStyle(date: .numeric, time: .standard))")
-            } else {
-                Button("Finalizar entrenamiento") {
-                    showConfirmationAlert = true
+                
+                Text("Entrenamiento iniciado el \(entrenamiento.inicio, format: Date.FormatStyle(date: .numeric, time: .standard))")
+                    .font(.body)
+                    .padding(.top, 4)
+                
+                if let fin = entrenamiento.fin {
+                    Text("Finalizado el \(fin, format: Date.FormatStyle(date: .numeric, time: .standard))")
+                        .font(.body)
+                        .padding(.top, 2)
+                } else {
+                    Button("Finalizar entrenamiento") {
+                        showConfirmationAlert = true
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .controlSize(.large)
+                    .padding(.top, 8)
                 }
-                .buttonStyle(.borderedProminent)
             }
+            .padding(12)
         }
-        .padding()
         .alert(
             "¿Seguro que quieres finalizar el entrenamiento?",
             isPresented: $showConfirmationAlert
