@@ -6,7 +6,32 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		A6F195AF2E436A2000E5B512 /* TrainioWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = A6F1958F2E436A1F00E5B512 /* TrainioWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
+		A6F1959C2E436A2000E5B512 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A6FB541F2E435BAE0013D1F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A6F1958E2E436A1F00E5B512;
+			remoteInfo = "TrainioWatch Watch App";
+		};
+		A6F195A62E436A2000E5B512 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A6FB541F2E435BAE0013D1F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A6F1958E2E436A1F00E5B512;
+			remoteInfo = "TrainioWatch Watch App";
+		};
+		A6F195AD2E436A2000E5B512 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A6FB541F2E435BAE0013D1F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A6F1958E2E436A1F00E5B512;
+			remoteInfo = "TrainioWatch Watch App";
+		};
 		A6FB54392E435BAF0013D1F2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A6FB541F2E435BAE0013D1F2 /* Project object */;
@@ -23,13 +48,37 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A6F195B02E436A2000E5B512 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				A6F195AF2E436A2000E5B512 /* TrainioWatch Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		A6F1958F2E436A1F00E5B512 /* TrainioWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TrainioWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6F1959B2E436A2000E5B512 /* TrainioWatch Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TrainioWatch Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6F195A52E436A2000E5B512 /* TrainioWatch Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TrainioWatch Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6FB54272E435BAE0013D1F2 /* Trainio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trainio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6FB54382E435BAF0013D1F2 /* TrainioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrainioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6FB54422E435BAF0013D1F2 /* TrainioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrainioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		A6F195BD2E436F0400E5B512 /* Exceptions for "Trainio" folder in "TrainioWatch Watch App" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Entrenamiento.swift,
+			);
+			target = A6F1958E2E436A1F00E5B512 /* TrainioWatch Watch App */;
+		};
 		A6FB544A2E435BAF0013D1F2 /* Exceptions for "Trainio" folder in "Trainio" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -40,10 +89,26 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		A6F195902E436A1F00E5B512 /* TrainioWatch Watch App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "TrainioWatch Watch App";
+			sourceTree = "<group>";
+		};
+		A6F1959E2E436A2000E5B512 /* TrainioWatch Watch AppTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "TrainioWatch Watch AppTests";
+			sourceTree = "<group>";
+		};
+		A6F195A82E436A2000E5B512 /* TrainioWatch Watch AppUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "TrainioWatch Watch AppUITests";
+			sourceTree = "<group>";
+		};
 		A6FB54292E435BAE0013D1F2 /* Trainio */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				A6FB544A2E435BAF0013D1F2 /* Exceptions for "Trainio" folder in "Trainio" target */,
+				A6F195BD2E436F0400E5B512 /* Exceptions for "Trainio" folder in "TrainioWatch Watch App" target */,
 			);
 			path = Trainio;
 			sourceTree = "<group>";
@@ -61,6 +126,27 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A6F1958C2E436A1F00E5B512 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6F195982E436A2000E5B512 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6F195A22E436A2000E5B512 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A6FB54242E435BAE0013D1F2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -91,6 +177,9 @@
 				A6FB54292E435BAE0013D1F2 /* Trainio */,
 				A6FB543B2E435BAF0013D1F2 /* TrainioTests */,
 				A6FB54452E435BAF0013D1F2 /* TrainioUITests */,
+				A6F195902E436A1F00E5B512 /* TrainioWatch Watch App */,
+				A6F1959E2E436A2000E5B512 /* TrainioWatch Watch AppTests */,
+				A6F195A82E436A2000E5B512 /* TrainioWatch Watch AppUITests */,
 				A6FB54282E435BAE0013D1F2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -101,6 +190,9 @@
 				A6FB54272E435BAE0013D1F2 /* Trainio.app */,
 				A6FB54382E435BAF0013D1F2 /* TrainioTests.xctest */,
 				A6FB54422E435BAF0013D1F2 /* TrainioUITests.xctest */,
+				A6F1958F2E436A1F00E5B512 /* TrainioWatch Watch App.app */,
+				A6F1959B2E436A2000E5B512 /* TrainioWatch Watch AppTests.xctest */,
+				A6F195A52E436A2000E5B512 /* TrainioWatch Watch AppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,6 +200,74 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		A6F1958E2E436A1F00E5B512 /* TrainioWatch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A6F195B72E436A2000E5B512 /* Build configuration list for PBXNativeTarget "TrainioWatch Watch App" */;
+			buildPhases = (
+				A6F1958B2E436A1F00E5B512 /* Sources */,
+				A6F1958C2E436A1F00E5B512 /* Frameworks */,
+				A6F1958D2E436A1F00E5B512 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				A6F195902E436A1F00E5B512 /* TrainioWatch Watch App */,
+			);
+			name = "TrainioWatch Watch App";
+			packageProductDependencies = (
+			);
+			productName = "TrainioWatch Watch App";
+			productReference = A6F1958F2E436A1F00E5B512 /* TrainioWatch Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A6F1959A2E436A2000E5B512 /* TrainioWatch Watch AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A6F195B82E436A2000E5B512 /* Build configuration list for PBXNativeTarget "TrainioWatch Watch AppTests" */;
+			buildPhases = (
+				A6F195972E436A2000E5B512 /* Sources */,
+				A6F195982E436A2000E5B512 /* Frameworks */,
+				A6F195992E436A2000E5B512 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A6F1959D2E436A2000E5B512 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				A6F1959E2E436A2000E5B512 /* TrainioWatch Watch AppTests */,
+			);
+			name = "TrainioWatch Watch AppTests";
+			packageProductDependencies = (
+			);
+			productName = "TrainioWatch Watch AppTests";
+			productReference = A6F1959B2E436A2000E5B512 /* TrainioWatch Watch AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A6F195A42E436A2000E5B512 /* TrainioWatch Watch AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A6F195B92E436A2000E5B512 /* Build configuration list for PBXNativeTarget "TrainioWatch Watch AppUITests" */;
+			buildPhases = (
+				A6F195A12E436A2000E5B512 /* Sources */,
+				A6F195A22E436A2000E5B512 /* Frameworks */,
+				A6F195A32E436A2000E5B512 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A6F195A72E436A2000E5B512 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				A6F195A82E436A2000E5B512 /* TrainioWatch Watch AppUITests */,
+			);
+			name = "TrainioWatch Watch AppUITests";
+			packageProductDependencies = (
+			);
+			productName = "TrainioWatch Watch AppUITests";
+			productReference = A6F195A52E436A2000E5B512 /* TrainioWatch Watch AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		A6FB54262E435BAE0013D1F2 /* Trainio */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A6FB544B2E435BAF0013D1F2 /* Build configuration list for PBXNativeTarget "Trainio" */;
@@ -115,10 +275,12 @@
 				A6FB54232E435BAE0013D1F2 /* Sources */,
 				A6FB54242E435BAE0013D1F2 /* Frameworks */,
 				A6FB54252E435BAE0013D1F2 /* Resources */,
+				A6F195B02E436A2000E5B512 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A6F195AE2E436A2000E5B512 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				A6FB54292E435BAE0013D1F2 /* Trainio */,
@@ -186,6 +348,17 @@
 				LastSwiftUpdateCheck = 2600;
 				LastUpgradeCheck = 2600;
 				TargetAttributes = {
+					A6F1958E2E436A1F00E5B512 = {
+						CreatedOnToolsVersion = 26.0;
+					};
+					A6F1959A2E436A2000E5B512 = {
+						CreatedOnToolsVersion = 26.0;
+						TestTargetID = A6F1958E2E436A1F00E5B512;
+					};
+					A6F195A42E436A2000E5B512 = {
+						CreatedOnToolsVersion = 26.0;
+						TestTargetID = A6F1958E2E436A1F00E5B512;
+					};
 					A6FB54262E435BAE0013D1F2 = {
 						CreatedOnToolsVersion = 26.0;
 					};
@@ -216,11 +389,35 @@
 				A6FB54262E435BAE0013D1F2 /* Trainio */,
 				A6FB54372E435BAF0013D1F2 /* TrainioTests */,
 				A6FB54412E435BAF0013D1F2 /* TrainioUITests */,
+				A6F1958E2E436A1F00E5B512 /* TrainioWatch Watch App */,
+				A6F1959A2E436A2000E5B512 /* TrainioWatch Watch AppTests */,
+				A6F195A42E436A2000E5B512 /* TrainioWatch Watch AppUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A6F1958D2E436A1F00E5B512 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6F195992E436A2000E5B512 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6F195A32E436A2000E5B512 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A6FB54252E435BAE0013D1F2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -245,6 +442,27 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A6F1958B2E436A1F00E5B512 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6F195972E436A2000E5B512 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6F195A12E436A2000E5B512 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A6FB54232E435BAE0013D1F2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -269,6 +487,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		A6F1959D2E436A2000E5B512 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A6F1958E2E436A1F00E5B512 /* TrainioWatch Watch App */;
+			targetProxy = A6F1959C2E436A2000E5B512 /* PBXContainerItemProxy */;
+		};
+		A6F195A72E436A2000E5B512 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A6F1958E2E436A1F00E5B512 /* TrainioWatch Watch App */;
+			targetProxy = A6F195A62E436A2000E5B512 /* PBXContainerItemProxy */;
+		};
+		A6F195AE2E436A2000E5B512 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A6F1958E2E436A1F00E5B512 /* TrainioWatch Watch App */;
+			targetProxy = A6F195AD2E436A2000E5B512 /* PBXContainerItemProxy */;
+		};
 		A6FB543A2E435BAF0013D1F2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A6FB54262E435BAE0013D1F2 /* Trainio */;
@@ -282,6 +515,165 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		A6F195B12E436A2000E5B512 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6PUHQ5CYQS;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = TrainioWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.sergiocomeron.Trainio;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sergiocomeron.Trainio.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Debug;
+		};
+		A6F195B22E436A2000E5B512 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6PUHQ5CYQS;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = TrainioWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.sergiocomeron.Trainio;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sergiocomeron.Trainio.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Release;
+		};
+		A6F195B32E436A2000E5B512 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6PUHQ5CYQS;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sergiocomeron.TrainioWatch-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TrainioWatch Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TrainioWatch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Debug;
+		};
+		A6F195B42E436A2000E5B512 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6PUHQ5CYQS;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sergiocomeron.TrainioWatch-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TrainioWatch Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TrainioWatch Watch App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Release;
+		};
+		A6F195B52E436A2000E5B512 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6PUHQ5CYQS;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sergiocomeron.TrainioWatch-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "TrainioWatch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Debug;
+		};
+		A6F195B62E436A2000E5B512 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6PUHQ5CYQS;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sergiocomeron.TrainioWatch-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "TrainioWatch Watch App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Release;
+		};
 		A6FB544C2E435BAF0013D1F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -593,6 +985,33 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A6F195B72E436A2000E5B512 /* Build configuration list for PBXNativeTarget "TrainioWatch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6F195B12E436A2000E5B512 /* Debug */,
+				A6F195B22E436A2000E5B512 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A6F195B82E436A2000E5B512 /* Build configuration list for PBXNativeTarget "TrainioWatch Watch AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6F195B32E436A2000E5B512 /* Debug */,
+				A6F195B42E436A2000E5B512 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A6F195B92E436A2000E5B512 /* Build configuration list for PBXNativeTarget "TrainioWatch Watch AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6F195B52E436A2000E5B512 /* Debug */,
+				A6F195B62E436A2000E5B512 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A6FB54222E435BAE0013D1F2 /* Build configuration list for PBXProject "Trainio" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

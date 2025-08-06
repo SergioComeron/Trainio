@@ -12,12 +12,12 @@ import SwiftData
 final class Entrenamiento {
     var inicio: Date
     var fin: Date?
-    var grupoMuscular: GrupoMuscular?
+    var gruposMusculares: [GrupoMuscular]
     
-    init(inicio: Date, fin: Date? = nil, grupoMuscular: GrupoMuscular) {
+    init(inicio: Date, fin: Date? = nil, gruposMusculares: [GrupoMuscular]) {
         self.inicio = inicio
         self.fin = fin
-        self.grupoMuscular = grupoMuscular
+        self.gruposMusculares = gruposMusculares
     }
 }
 

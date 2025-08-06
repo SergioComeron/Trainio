@@ -32,7 +32,6 @@ struct EntrenamientoView: View {
                             Text(grupo.rawValue)
                                 .font(.subheadline)
                                 .foregroundStyle(.white)
-                                .lineLimit(1)
                                 .padding(.vertical, 8)
                                 .padding(.horizontal, 16)
                                 .background(
@@ -65,14 +64,4 @@ struct EntrenamientoView: View {
             Button("Cancelar", role: .cancel) {}
         }
     }
-}
-
-#Preview("iPhone ejemplo") {
-    let entrenamientoPreview = Entrenamiento(
-        inicio: Date().addingTimeInterval(-3600),
-        fin: nil,
-        gruposMusculares: [.pecho, .espalda, .brazo]
-    )
-    return EntrenamientoView(entrenamiento: entrenamientoPreview)
-        .modelContainer(for: Entrenamiento.self, inMemory: true)
 }
