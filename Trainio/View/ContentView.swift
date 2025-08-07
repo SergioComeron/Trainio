@@ -14,6 +14,7 @@ struct ContentView: View {
     
     @State private var showAddSheet = false
     @State private var selectedGruposMusculares: Set<GrupoMuscular> = []
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
     var body: some View {
         NavigationSplitView {
@@ -70,57 +71,77 @@ struct ContentView: View {
             Text("Select an entrenamiento")
         }
         .sheet(isPresented: $showAddSheet) {
-            GeometryReader { geometry in
-                let sidePadding: CGFloat = 16 // Margen lateral a cada lado
-                let buttonWidth = (geometry.size.width - (2 * sidePadding) - 12) / 2 // Resta márgenes y espacio entre columnas
-                let columns = [
-                    GridItem(.fixed(buttonWidth), spacing: 12),
-                    GridItem(.fixed(buttonWidth))
-                ]
-                VStack {
-                    Text("Selecciona el grupo muscular")
-                        .font(.headline)
-                    LazyVGrid(columns: columns, spacing: 12) {
-                        ForEach(GrupoMuscular.allCases, id: \.self) { grupo in
-                            Button(action: {
-                                if selectedGruposMusculares.contains(grupo) {
-                                    selectedGruposMusculares.remove(grupo)
-                                } else {
-                                    selectedGruposMusculares.insert(grupo)
-                                }
-                            }) {
-                                Text(grupo.rawValue)
-                                    .font(.body)
-                                    .foregroundStyle(selectedGruposMusculares.contains(grupo) ? .white : .primary)
-                                    .fixedSize(horizontal: true, vertical: false) // Evita división del texto
-                                    .frame(width: buttonWidth, alignment: .center) // Ancho fijo para todos los botones
-                                    .padding(.vertical, 10)
-                                    .background(
-                                        RoundedRectangle(cornerRadius: 20, style: .continuous)
-                                            .fill(selectedGruposMusculares.contains(grupo) ? Color.accentColor : Color(.systemGray5))
-                                            .shadow(color: selectedGruposMusculares.contains(grupo) ? Color.accentColor.opacity(0.25) : .clear, radius: 4, x: 0, y: 2)
-                                    )
-                            }
-                            .buttonStyle(.plain)
-                        }
+            let isPad = horizontalSizeClass == .regular
+            Group {
+                if isPad {
+                    ScrollView {
+                        sheetContent
                     }
-                    .padding(.vertical, 4)
-                    .padding(.horizontal, sidePadding) // Aplica el margen lateral al LazyVGrid
-                    HStack {
-                        Button("Añadir") {
-                            addItem(gruposMusculares: Array(selectedGruposMusculares))
-                            showAddSheet = false
-                            selectedGruposMusculares = []
+                } else {
+                    sheetContent
+                }
+            }
+#if os(iOS)
+            .presentationDetents(isPad ? [.large] : [.medium])
+#else
+            .frame(minHeight: 400) // 👈 Añade esto para macOS
+#endif
+        }
+    }
+
+    private var sheetContent: some View {
+        GeometryReader { geometry in
+            let sidePadding: CGFloat = 16
+            let buttonWidth = (geometry.size.width - (2 * sidePadding) - 12) / 2
+            let columns = [
+                GridItem(.fixed(buttonWidth), spacing: 12),
+                GridItem(.fixed(buttonWidth))
+            ]
+            VStack {
+                Text("Selecciona el grupo muscular")
+                    .font(.headline)
+                LazyVGrid(columns: columns, spacing: 12) {
+                    ForEach(GrupoMuscular.allCases, id: \.self) { grupo in
+                        Button(action: {
+                            if selectedGruposMusculares.contains(grupo) {
+                                selectedGruposMusculares.remove(grupo)
+                            } else {
+                                selectedGruposMusculares.insert(grupo)
+                            }
+                        }) {
+                            Text(grupo.rawValue)
+                                .font(.body)
+                                .foregroundStyle(selectedGruposMusculares.contains(grupo) ? .white : .primary)
+                                .fixedSize(horizontal: true, vertical: false)
+                                .frame(width: buttonWidth, alignment: .center)
+                                .padding(.vertical, 10)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 20, style: .continuous)
+                                        .fill(selectedGruposMusculares.contains(grupo) ? Color.accentColor : Color.gray.opacity(0.2))
+                                        .shadow(color: selectedGruposMusculares.contains(grupo) ? Color.accentColor.opacity(0.25) : .clear, radius: 4, x: 0, y: 2)
+                                )
                         }
-                        .padding()
-                        Button("Cancelar") {
-                            showAddSheet = false
-                            selectedGruposMusculares = []
-                        }
+                        .buttonStyle(.plain)
                     }
                 }
-                .padding(.vertical) // Mantiene el padding vertical del VStack
-                .presentationDetents([.medium])
+                .padding(.vertical, 4)
+                .padding(.horizontal, sidePadding)
+                HStack {
+                    Button("Añadir") {
+                        addItem(gruposMusculares: Array(selectedGruposMusculares))
+                        showAddSheet = false
+                        selectedGruposMusculares = []
+                    }
+                    .padding()
+                    Button("Cancelar") {
+                        showAddSheet = false
+                        selectedGruposMusculares = []
+                    }
+                }
+            }
+            .padding(.vertical)
+            .onAppear {
+                Ejercicio.poblarSiNecesario(context: modelContext)
             }
         }
     }
@@ -145,4 +166,3 @@ struct ContentView: View {
     ContentView()
         .modelContainer(for: Entrenamiento.self, inMemory: true)
 }
-
