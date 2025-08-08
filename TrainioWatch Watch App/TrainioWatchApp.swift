@@ -13,6 +13,9 @@ struct TrainioWatch_Watch_AppApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Entrenamiento.self,
+            Ejercicio.self,
+            EjercicioRealizado.self,
+            Serie.self
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 

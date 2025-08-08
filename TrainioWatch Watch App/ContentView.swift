@@ -26,6 +26,9 @@ struct ContentView: View {
                 mostrarListadoEntrenamientos = true
             }
         }
+        .onAppear {
+            Ejercicio.poblarSiNecesario(context: modelContext)
+        }
         .sheet(isPresented: $mostrarSeleccionGrupos) {
             SeleccionarGruposView(seleccionados: $gruposSeleccionados) {
                 mostrarSeleccionGrupos = false
@@ -39,6 +42,7 @@ struct ContentView: View {
         .sheet(item: $entrenamientoReciente) { entrenamiento in
             EntrenamientoView(entrenamiento: entrenamiento)
         }
+        
     }
     
     private func addItem(gruposMusculares: [GrupoMuscular]) -> Entrenamiento {

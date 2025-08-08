@@ -20,6 +20,7 @@ struct EntrenamientoView: View {
     @State private var seriesTemp: [Serie] = []
     @Query private var ejerciciosBase: [Ejercicio]
     
+    
     private func finalizarEntrenamiento() {
         entrenamiento.fin = Date()
     }
